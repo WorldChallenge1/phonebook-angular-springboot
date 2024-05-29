@@ -61,6 +61,7 @@ cd .\phonebook-angular-springboot\Backend\contactsapi\
 ## Frontend Installation and Usage
 
 ### Prerequisites
+
 * Node.js and npm (Node Package Manager)
 * Angular CLI (Angular 17 or later)
 
@@ -71,3 +72,25 @@ cd .\phonebook-angular-springboot\Backend\contactsapi\
 ```bash
 cd .\phonebook-angular-springboot\Frontend\phonebook-web\
 ```
+
+* Install dependencies
+
+```bash
+npm install
+```
+
+* To start the frontend, run the following command:
+
+```bash
+ng serve
+```
+
+* Go to http://localhost:4200/ to see the application running.
+
+## Screenshots
+
+![screenshot](Assets/contact_list.png)
+
+![screenshot](Assets/edit_contact.png)
+
+![screenshot](Assets/new_contact.png)
