@@ -1,0 +1,42 @@
+<h2 class="mb-5">Contact List</h2>
+
+<div class="text-end">
+  <button class="btn btn-primary" routerLink="new">
+    New Contact
+  </button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(contact of this.contacts; track contact.id) {
+      <tr>
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.createdAt | date:"dd/MM/yyyy" }}</td>
+        <td>
+          <div class="d-flex justify-content-evenly">
+            <button class="btn btn-primary" [routerLink]="['edit', contact.id]">
+              Edit
+            </button>
+            <button class="btn btn-danger ms-2" (click)="delete(contact.id!)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    }
+    @empty {
+      <p>No contacts</p>
+    }
+  </tbody>
+</table>

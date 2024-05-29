@@ -1,0 +1,32 @@
+<h2 class="mb-5">{{ formText }}</h2>
+
+<div class="row row-cols-3 justify-content-center">
+  <form action="" [formGroup]="contactForm" (ngSubmit)="save()">
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Name" class="form-control" formControlName="name">
+      @if (this.contactForm.get('name')?.invalid && this.contactForm.get('name')?.touched) {
+        <div class="text-danger">Name is required</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" placeholder="Phone" class="form-control" formControlName="phone">
+      @if (this.contactForm.get('phone')?.invalid && this.contactForm.get('phone')?.touched) {
+        <div class="text-danger">Phone is required, and must be a valid phone number</div>
+      }
+    </div>
+
+    <div class="text-end">
+      <button type="button" class="btn btn-light" routerLink="">
+        Cancel
+      </button>
+      <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary ms-2">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+
+

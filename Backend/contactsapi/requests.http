@@ -1,0 +1,29 @@
+GET http://localhost:8080/api/contacts
+
+###
+
+GET http://localhost:8080/api/contacts/6
+
+###
+
+POST http://localhost:8080/api/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "test",
+    "phone": "1234567890"
+}
+
+###
+PUT http://localhost:8080/api/contacts/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 6,
+    "name": "testo2",
+    "phone": "0987654321"
+}
+
+###
+
+DELETE http://localhost:8080/api/contacts/6 HTTP/1.1
